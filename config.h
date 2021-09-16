@@ -100,6 +100,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_F1,     focusnthmon,    {.i = 0 } },
+	{ MODKEY,                       XK_F2,     focusnthmon,    {.i = 1 } },
+	{ MODKEY,                       XK_F3,     focusnthmon,    {.i = 2 } },
+	{ MODKEY|ShiftMask,             XK_F1,     tagnthmon,      {.i = 0 } },
+	{ MODKEY|ShiftMask,             XK_F2,     tagnthmon,      {.i = 1 } },
+	{ MODKEY|ShiftMask,             XK_F3,     tagnthmon,      {.i = 2 } },
 };
 
 /* button definitions */
