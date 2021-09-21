@@ -30,9 +30,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class       instance                     title       tags mask     isfloating   monitor */
-	{ "Slack",     NULL,                        NULL,       0,            0,           0 },
-	{ "zoom",      NULL,                        NULL,       0,            0,           0 },
+	/* class       instance                                   title       tags mask     isfloating   monitor */
+	{ "Slack",     NULL,                                      NULL,       0,            0,           0 },
+	{ "zoom",      NULL,                                      NULL,       0,            0,           0 },
+	{ NULL,        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       0,            0,           0 }, // Outlook
 };
 
 /* layout(s) */
