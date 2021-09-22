@@ -8,12 +8,12 @@ static const unsigned int snap            = 32;       /* snap pixel */
 static const int showbar                  = 1;        /* 0 means no bar */
 static const int topbar                   = 1;        /* 0 means bottom bar */
 static const int focusonwheel             = 0;
-static const char *fonts[]                = { "monospace:size=14", "JoyPixels:pixelsize=14:antialias=true:autohint=true" };
+static const char *fonts[]                = { "Segoe UI:size=12:antialias=true", "JoyPixels:pixelsize=12:antialias=true:autohint=true" };
 static const char dmenufont[]             = "monospace:size=10";
 static const char normbgcolor[]           = "#222222";
 static const char normbordercolor[]       = "#444444";
-static const char normfgcolor[]           = "#ffffff"; //"#bbbbbb";
-static const char selfgcolor[]            = "#ffffff"; //"#eeeeee";
+static const char normfgcolor[]           = "#ffffff";
+static const char selfgcolor[]            = "#ffffff";
 static const char selbordercolor[]        = "#770000";
 static const char selbgcolor[]            = "#005577";
 static const char *colors[][3] = {
