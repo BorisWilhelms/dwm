@@ -63,6 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *roficmd[] = { "rofi", "-show", NULL };
+static const char *windowcmd[] = { "rofi", "-show", "window", NULL };
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 static Key keys[] = {
@@ -83,6 +84,7 @@ static Key keys[] = {
 	{ MODKEY,             XK_f,                       setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,             XK_space,                   setlayout,      {0} },
+	{ MODKEY,             XK_w,                       spawn,          {.v = windowcmd } },
 	{ MODKEY|ShiftMask,   XK_space,                   togglefloating, {0} },
 	{ MODKEY,             XK_0,                       view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,   XK_0,                       tag,            {.ui = ~0 } },
