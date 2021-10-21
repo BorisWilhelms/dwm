@@ -78,7 +78,6 @@ static Key keys[] = {
 	{ MODKEY,             XK_minus,                   setmfact,       {.f = -0.05} },
 	{ MODKEY,             XK_equal,                   setmfact,       {.f = +0.05} },
 	{ MODKEY,             XK_Return,                  zoom,           {0} },
-	{ MODKEY,             XK_Tab,                     view,           {0} },
 	{ MODKEY|ShiftMask,   XK_c,                       killclient,     {0} },
 	{ MODKEY,             XK_t,                       setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,             XK_f,                       setlayout,      {.v = &layouts[1]} },
@@ -97,10 +96,11 @@ static Key keys[] = {
 	TAGKEYS(              XK_7,                                       6)
 	TAGKEYS(              XK_8,                                       7)
 	TAGKEYS(              XK_9,                                       8)
-	{ MODKEY|ShiftMask,   XK_q,                       quit,           {0} },
+	{ MODKEY|ShiftMask,   XK_q,                       spawn,          SHCMD("off") },
 	{ MODKEY,             XK_F1,                      focusnthmon,    {.i = 0 } },
 	{ MODKEY,             XK_F2,                      focusnthmon,    {.i = 1 } },
 	{ MODKEY,             XK_F3,                      focusnthmon,    {.i = 2 } },
+	{ MODKEY,             XK_F5,                      quit,           {0} },
 	{ MODKEY|ShiftMask,   XK_F1,                      tagnthmon,      {.i = 0 } },
 	{ MODKEY|ShiftMask,   XK_F2,                      tagnthmon,      {.i = 1 } },
 	{ MODKEY|ShiftMask,   XK_F3,                      tagnthmon,      {.i = 2 } },
