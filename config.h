@@ -39,6 +39,7 @@ static const Rule rules[] = {
 	{ "Slack",     NULL,                                      NULL,       0,            0,           0 },
 	{ "zoom",      NULL,                                      NULL,       0,            0,           0 },
 	{ NULL,        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       0,            0,           0 }, // Outlook
+	{ NULL,        "qalculate-gtk",                           NULL,       0,            1,           1 },
 };
 
 /* layout(s) */
@@ -115,9 +116,10 @@ static Key keys[] = {
 	{ MODKEY,             XK_Escape,                  spawn,          SHCMD("lock") },
 	{ MODKEY|ShiftMask,   XK_Escape,                  spawn,          SHCMD("off") },
 	{ 0,                  XF86XK_AudioPlay,           spawn,          SHCMD("playerctl play-pause") },
-	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("volume -i; kill -44 $(pidof dwmblocks)") },
-	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("volume -d; kill -44 $(pidof dwmblocks)") },
-	{ 0,                  XF86XK_AudioMute,           spawn,          SHCMD("volume -t; kill -44 $(pidof dwmblocks)") },
+	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("volume -i") },
+	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("volume -d") },
+	{ 0,                  XF86XK_AudioMute,           spawn,          SHCMD("volume -t") },
+	{ 0,                  XF86XK_Calculator,           spawn,         SHCMD("calc") },
 };
 
 /* button definitions */
