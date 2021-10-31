@@ -119,7 +119,7 @@ static Key keys[] = {
 	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("volume -i") },
 	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("volume -d") },
 	{ 0,                  XF86XK_AudioMute,           spawn,          SHCMD("volume -t") },
-	{ 0,                  XF86XK_Calculator,           spawn,         SHCMD("calc") },
+	{ 0,                  XF86XK_Calculator,          spawn,          SHCMD("calc") },
 };
 
 /* button definitions */
