@@ -104,13 +104,13 @@ static Key keys[] = {
 	TAGKEYS(              XK_8,                                       7)
 	TAGKEYS(              XK_9,                                       8)
 	{ MODKEY|ShiftMask,   XK_q,                       spawn,          SHCMD("off") },
-	{ MODKEY,             XK_F1,                      focusnthmon,    {.i = 0 } },
-	{ MODKEY,             XK_F2,                      focusnthmon,    {.i = 1 } },
-	{ MODKEY,             XK_F3,                      focusnthmon,    {.i = 2 } },
+	{ MODKEY,             XK_F1,                      focusnthmon,    {.i = 2 } },
+	{ MODKEY,             XK_F2,                      focusnthmon,    {.i = 0 } },
+	{ MODKEY,             XK_F3,                      focusnthmon,    {.i = 1 } },
 	{ MODKEY,             XK_F5,                      quit,           {0} },
-	{ MODKEY|ShiftMask,   XK_F1,                      tagnthmon,      {.i = 0 } },
-	{ MODKEY|ShiftMask,   XK_F2,                      tagnthmon,      {.i = 1 } },
-	{ MODKEY|ShiftMask,   XK_F3,                      tagnthmon,      {.i = 2 } },
+	{ MODKEY|ShiftMask,   XK_F1,                      tagnthmon,      {.i = 2 } },
+	{ MODKEY|ShiftMask,   XK_F2,                      tagnthmon,      {.i = 0 } },
+	{ MODKEY|ShiftMask,   XK_F3,                      tagnthmon,      {.i = 1 } },
 	{ MODKEY,             XK_period,                  spawn,          SHCMD("rofi-emoji-picker") },		// Emoji picker
 	{ MODKEY,             XK_s,                       spawn,          SHCMD("screenshot") }, // Creates a screenshot and copies it to the clipboard
 	{ MODKEY|ShiftMask,   XK_s,                       spawn,          SHCMD("screenshot -select") }, // Creates a screenshot of a region and copies it to the clipboard
