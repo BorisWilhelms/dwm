@@ -167,6 +167,7 @@ struct Systray {
 };
 
 /* function declarations */
+static void applydefaultlayouts();
 static void applyrules(Client *c);
 static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
 static void arrange(Monitor *m);
@@ -315,6 +316,21 @@ static Window root, wmcheckwin;
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
 
 /* function implementations */
+void
+applydefaultlayouts()
+{
+    Monitor *m;
+    int i = 0;
+    for (m = mons; m; m = m->next) {
+        if (i < LENGTH(lpm)) {
+            m->lt[0] = &layouts[lpm[i]];
+            m->lt[1] = &layouts[(lpm[i] + 1) % LENGTH(layouts)];
+            strncpy(m->ltsymbol, layouts[i].symbol, sizeof m->ltsymbol);
+        }
+        i++;
+    }
+}
+
 void
 applyrules(Client *c)
 {
@@ -2230,6 +2246,7 @@ updategeom(void)
 				cleanupmon(m);
 			}
 		}
+		applydefaultlayouts();
 		free(unique);
 	} else
 #endif /* XINERAMA */

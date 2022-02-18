@@ -49,6 +49,13 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+/* Layout per monitor */
+/* Index of lpm equals to the monitor number */
+/* Value of lpm equals to the layout number */
+static const int lpm[] = {
+	0, 2
+};
+
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
