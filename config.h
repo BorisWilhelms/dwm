@@ -24,9 +24,9 @@ static const char selfgcolor[]            = "#ffb86c";
 static const char selbordercolor[]        = "#ffb86c";
 static const char selbgcolor[]            = "#282a36";
 static const char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	/*               fg           bg           border   */
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -126,6 +126,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_s,                       spawn,          SHCMD("screenshot -select") }, // Creates a screenshot of a region and copies it to the clipboard
 	{ MODKEY,             XK_Escape,                  spawn,          SHCMD("lock") },
 	{ MODKEY|ShiftMask,   XK_Escape,                  spawn,          SHCMD("off") },
+	{ MODKEY, 			  XK_z,                       spawn,          SHCMD("boomer") },
 	{ 0,                  XF86XK_AudioPlay,           spawn,          SHCMD("playerctl play-pause") },
 	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("sb-volume -i") },
 	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("sb-volume -d") },
