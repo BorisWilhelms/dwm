@@ -38,9 +38,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class       instance                                   title       tags mask     isfloating   monitor */
-	{ "Slack",     NULL,                                      NULL,       0,            0,           1 },
+	{ NULL,        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1,	        0,           1 }, // Outlook
+	{ "Slack",     NULL,                                      NULL,       1 << 1,       0,           1 },
 	{ "zoom",      NULL,                                      NULL,       1 << 2,       0,           1 },
-	{ NULL,        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1 << 1,       0,           1 }, // Outlook
 	{ NULL,        "qalculate-gtk",                           NULL,       0,            1,           0 },
 	{ "Kazam",     NULL,                                      NULL,       0,            1,           0 },
 };

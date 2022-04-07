@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "/etc/hosts": "shellscript",
+        "xft.h": "c"
+    }
+}
