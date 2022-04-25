@@ -43,6 +43,8 @@ static const Rule rules[] = {
 	{ "zoom",      NULL,                                      NULL,       1 << 2,       0,           1 },
 	{ NULL,        "qalculate-gtk",                           NULL,       0,            1,           0 },
 	{ "Kazam",     NULL,                                      NULL,       0,            1,           0 },
+	{ "Signal",    NULL,                                      NULL,       1 << 8,       0,           2 },
+	{ NULL,        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
 };
 
 /* layout(s) */
