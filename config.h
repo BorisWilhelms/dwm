@@ -101,6 +101,7 @@ static Key keys[] = {
 	{ MODKEY,             XK_f,                       setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,   XK_m,                       spawn,	      SHCMD("sb-mic -t") },
+	{ MODKEY,			  XK_c,                       spawn,	      SHCMD("sb-mic -t") }, // Microphone button on Keychron
 	{ MODKEY,             XK_space,                   setlayout,      {0} },
 	{ MODKEY,             XK_w,                       spawn,          {.v = windowcmd } },
 	{ MODKEY|ShiftMask,   XK_space,                   togglefloating, {0} },
@@ -123,7 +124,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_F1,                      tagnthmon,      {.i = 2 } },
 	{ MODKEY|ShiftMask,   XK_F2,                      tagnthmon,      {.i = 0 } },
 	{ MODKEY|ShiftMask,   XK_F3,                      tagnthmon,      {.i = 1 } },
-	{ MODKEY,             XK_period,                  spawn,          SHCMD("rofi-emoji-picker") },		// Emoji picker
+	{ MODKEY,             XK_period,                  spawn,          SHCMD("rofi-emoji-picker") }, // Emoji picker
 	{ MODKEY,             XK_s,                       spawn,          SHCMD("screenshot") }, // Creates a screenshot and copies it to the clipboard
 	{ MODKEY|ShiftMask,   XK_s,                       spawn,          SHCMD("screenshot -select") }, // Creates a screenshot of a region and copies it to the clipboard
 	{ MODKEY,             XK_Escape,                  spawn,          SHCMD("lock") },
@@ -133,7 +134,7 @@ static Key keys[] = {
 	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("sb-volume -i") },
 	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("sb-volume -d") },
 	{ 0,                  XF86XK_AudioMute,           spawn,          SHCMD("sb-volume -t") },
-	{ 0,                  XF86XK_Calculator,          spawn,          SHCMD("calc") },
+	{ MODKEY,             XK_e,				          spawn,          SHCMD("calc") }, // Calculator button on Keychron
 	{ 0,                  XF86XK_MonBrightnessUp,     spawn,          SHCMD("backlight --inc") },
 	{ 0,                  XF86XK_MonBrightnessDown,   spawn,          SHCMD("backlight --dec") },
 };
