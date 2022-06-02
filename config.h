@@ -27,6 +27,8 @@ static const char *colors[][3] = {
 	/*               fg           bg           border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
 	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[TagNorm]    = { normfgcolor, normbgcolor, normbordercolor },
+	[TagSel]     = { normfgcolor, "#44475a",   selbordercolor  },
 };
 
 /* tagging */
