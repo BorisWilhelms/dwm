@@ -12,7 +12,7 @@ static const int systraypinningfailfirst  = 1;        /* 1: if pinning fails, di
 static const int showsystray              = 1;        /* 0 means no systray */
 static const int showbar                  = 1;        /* 0 means no bar */
 static const int topbar                   = 1;        /* 0 means bottom bar */
-static const int horizpadbar              = 0;        /* horizontal padding for statusbar */
+static const int horizpadbar              = 8;        /* horizontal padding for statusbar */
 static const int vertpadbar               = 8;        /* vertical padding for statusbar */
 static const int focusonwheel             = 0;
 static const char *fonts[]                = { "JetBrainsMono Nerd Font:size=12", "Material Design Icons-Regular:size=10" };
@@ -39,14 +39,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class       instance                                   title       tags mask     isfloating   monitor */
-	{ NULL,        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1,	        0,           1 }, // Outlook
-	{ "Slack",     NULL,                                      NULL,       1 << 1,       0,           1 },
-	{ "zoom",      NULL,                                      NULL,       1 << 2,       0,           1 },
-	{ NULL,        "qalculate-gtk",                           NULL,       0,            1,           0 },
-	{ "Kazam",     NULL,                                      NULL,       0,            1,           0 },
-	{ "Signal",    NULL,                                      NULL,       1 << 8,       0,           2 },
-	{ NULL,        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
+	/* class                       instance                                   title       tags mask     isfloating   monitor */
+	{ NULL,                        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1 << 8,       0,           0 }, // Outlook
+	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1 },
+	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1 },
+	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1 },
+	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,           0 },
+	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0 },
+	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2 },
+	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
 };
 
 /* layout(s) */
