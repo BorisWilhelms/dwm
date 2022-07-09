@@ -70,6 +70,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "HHH",      grid },	
+	{ "HH",       fiftyfifty },	
 };
 
 /* key definitions */
@@ -106,6 +107,7 @@ static Key keys[] = {
 	{ MODKEY,             XK_f,                       setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,             XK_g,   					  setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,             XK_h,   					  setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,   XK_m,                       spawn,	      SHCMD("sb-mic -t") },
 	{ MODKEY,			  XK_c,                       spawn,	      SHCMD("sb-mic -t") }, // Microphone button on Keychron
 	{ MODKEY,             XK_space,                   setlayout,      {0} },

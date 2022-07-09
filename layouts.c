@@ -25,3 +25,26 @@ grid(Monitor *m) {
 		i++;
 	}
 }
+
+void 
+fiftyfifty(Monitor *m) {
+	unsigned int n, w, i, cx, cy;
+	Client *c;
+
+	for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next))
+		n++;
+
+	if (n != 2)
+	{
+		grid(m);
+		return;
+	}
+
+	w = m->ww / 2;
+	for(i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next)) {
+		cx = w * i;
+		cy = m->wy;
+		resize(c, cx, cy, w, m->wh, False);
+		i++;
+	}
+}
