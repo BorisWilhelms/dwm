@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "/etc/hosts": "shellscript",
-        "xft.h": "c"
+        "xft.h": "c",
+        "valarray": "c"
     }
 }

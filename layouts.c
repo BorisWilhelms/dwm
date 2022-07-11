@@ -42,7 +42,7 @@ fiftyfifty(Monitor *m) {
 
 	w = m->ww / 2;
 	for(i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next)) {
-		cx = w * i;
+		cx = m->wx + w * i;
 		cy = m->wy;
 		resize(c, cx, cy, w, m->wh, False);
 		i++;
