@@ -16,7 +16,7 @@ static const int topbar                   = 1;        /* 0 means bottom bar */
 static const int horizpadbar              = 8;        /* horizontal padding for statusbar */
 static const int vertpadbar               = 8;        /* vertical padding for statusbar */
 static const int focusonwheel             = 0;
-static const char *fonts[]                = { "JetBrainsMono Nerd Font:size=12", "Material Design Icons-Regular:size=10" };
+static const char *fonts[]                = { "JetBrainsMono Nerd Font:size=12", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=truesudo" };
 
 static const char normbgcolor[]           = "#282a36";
 static const char normbordercolor[]       = "#282a36";
