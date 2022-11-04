@@ -143,8 +143,8 @@ static Key keys[] = {
 	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("sb-volume -d") },
 	{ 0,                  XF86XK_AudioMute,           spawn,          SHCMD("sb-volume -t") },
 	{ MODKEY,             XK_e,				          spawn,          SHCMD("calc") }, // Calculator button on Keychron
-	{ 0,                  XF86XK_MonBrightnessUp,     spawn,          SHCMD("backlight --inc") },
-	{ 0,                  XF86XK_MonBrightnessDown,   spawn,          SHCMD("backlight --dec") },
+	{ 0,                  XF86XK_MonBrightnessUp,     spawn,          SHCMD("light -A 2") },
+	{ 0,                  XF86XK_MonBrightnessDown,   spawn,          SHCMD("light -U 2") },
 };
 
 /* button definitions */
