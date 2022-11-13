@@ -40,15 +40,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                       instance                                   title       tags mask     isfloating 	isfreesize  monitor */
-	{ NULL,                        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1 << 8,       0,          0,			0 }, // Outlook
-	{ "Slack",                     NULL,                                      NULL,       1     ,       0,          0,			1 },
-	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,          0,			1 },
-	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,          0,			1 },
-	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,          0,			0 },
-	{ "Kazam",                     NULL,                                      NULL,       0,            1,          0,			0 },
-	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,          0,			2 },
-	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,          0,			2 }, // Whats App
+	/* class                       instance                                   title       tags mask     isfloating   monitor */
+	{ NULL,                        "crx__pkooggnaalmfkidjmlhoelhdllpphaga",   NULL,       1 << 8,       0,           0 }, // Outlook
+	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1 },
+	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1 },
+	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1 },
+	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,           0 },
+	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0 },
+	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2 },
+	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
 };
 
 /* layout(s) */

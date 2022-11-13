@@ -111,7 +111,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
 	int bw, oldbw;
 	unsigned int tags;
-	int isfixed, isfloating, isfreesize, isurgent, neverfocus, oldstate, isfullscreen;
+	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
 	Client *next;
 	Client *snext;
 	Monitor *mon;
@@ -159,7 +159,6 @@ typedef struct {
 	const char *title;
 	unsigned int tags;
 	int isfloating;
-	int isfreesize;
 	int monitor;
 } Rule;
 
@@ -353,7 +352,6 @@ applyrules(Client *c)
 
 	/* rule matching */
 	c->isfloating = 0;
-	c->isfreesize = 1;
 	c->tags = 0;
 	XGetClassHint(dpy, c->win, &ch);
 	class    = ch.res_class ? ch.res_class : broken;
@@ -366,7 +364,6 @@ applyrules(Client *c)
 		&& (!r->instance || strstr(instance, r->instance)))
 		{
 			c->isfloating = r->isfloating;
-			c->isfreesize = r->isfreesize;
 			c->tags |= r->tags;
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
@@ -2426,7 +2423,7 @@ updatesizehints(Client *c)
 
 	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
 		/* size is uninitialized, ensure that size.flags aren't used */
-		size.flags = 0;
+		size.flags = PSize;
 	if (size.flags & PBaseSize) {
 		c->basew = size.base_width;
 		c->baseh = size.base_height;
@@ -2458,11 +2455,6 @@ updatesizehints(Client *c)
 		c->maxa = (float)size.max_aspect.x / size.max_aspect.y;
 	} else
 		c->maxa = c->mina = 0.0;
-	if((size.flags & PSize) && c->isfreesize) {
-		c->basew = size.base_width;
-		c->baseh = size.base_height;
-		c->isfloating = 1;
-	}
 	c->isfixed = (c->maxw && c->maxh && c->maxw == c->minw && c->maxh == c->minh);
 }
 
@@ -2609,10 +2601,8 @@ updatewindowtype(Client *c)
 
 	if (state == netatom[NetWMFullscreen])
 		setfullscreen(c, 1);
-	if (wtype == netatom[NetWMWindowTypeDialog]) {
+	if (wtype == netatom[NetWMWindowTypeDialog])
 		c->isfloating = 1;
-		c->isfreesize = 1;
-	}
 }
 
 void
