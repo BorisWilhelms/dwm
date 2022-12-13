@@ -32,6 +32,18 @@ static const char *colors[][3] = {
 	[TagSel]     = { normfgcolor, "#44475a",   selbordercolor  },
 };
 
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+const char *spcmd1[] = {"alacritty", "--class", "scratchpad", NULL };
+const char *spcmd2[] = {"bitwarden-desktop", NULL };
+static Sp scratchpads[] = {
+	/* name         cmd  */
+	{"alacritty",   spcmd1},
+	{"bitwarden",   spcmd2},
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -49,6 +61,9 @@ static const Rule rules[] = {
 	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0 },
 	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2 },
 	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
+	{ NULL,		  				   "scratchpad",							  NULL,		  SPTAG(0),		1,			 -1 },
+	{ NULL,		  				   "bitwarden",	     						  NULL,		  SPTAG(1),		1,			 -1 },
+	{ "webex",	  				   NULL,		     						  NULL,		  1 << 7,		0,			 2 },
 };
 
 /* layout(s) */
@@ -94,7 +109,9 @@ static Key keys[] = {
 	/* modifier           key                         function        argument */
 	{ MODKEY,             XK_p,                       spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,   XK_Return,                  spawn,          {.v = termcmd } },
+	{ MODKEY|ControlMask, XK_Return,                  togglescratch,  {.ui = 0 } },
 	{ MODKEY,             XK_b,                       togglebar,      {0} },
+	{ MODKEY|ControlMask, XK_b,                       togglescratch,  {.ui = 1 } },
 	{ MODKEY,             XK_Tab,                     focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,   XK_Tab,                     focusstack,     {.i = -1 } },
 	{ MODKEY,             XK_i,                       incnmaster,     {.i = +1 } },
