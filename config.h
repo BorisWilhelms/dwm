@@ -102,12 +102,14 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *roficmd[] = { "rofi", "-show", NULL };
+static const char *runcmd[] = { "rofi", "-show", "run", NULL };
 static const char *windowcmd[] = { "rofi", "-show", "window", "-theme", "Dracula-window", NULL };
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 static Key keys[] = {
 	/* modifier           key                         function        argument */
 	{ MODKEY,             XK_p,                       spawn,          {.v = roficmd } },
+	{ MODKEY,             XK_r,                       spawn,          {.v = runcmd } },
 	{ MODKEY|ShiftMask,   XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask, XK_Return,                  togglescratch,  {.ui = 0 } },
 	{ MODKEY,             XK_b,                       togglebar,      {0} },
