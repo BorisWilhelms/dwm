@@ -16,7 +16,7 @@ static const int topbar                   = 1;        /* 0 means bottom bar */
 static const int horizpadbar              = 8;        /* horizontal padding for statusbar */
 static const int vertpadbar               = 8;        /* vertical padding for statusbar */
 static const int focusonwheel             = 0;
-static const char *fonts[]                = { "JetBrainsMono Nerd Font:size=12", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=truesudo" };
+static const char *fonts[]                = { "JetBrainsMono Nerd Font:size=14", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=truesudo" };
 
 static const char normbgcolor[]           = "#282a36";
 static const char normbordercolor[]       = "#282a36";
@@ -38,10 +38,12 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"alacritty", "--class", "scratchpad", NULL };
 const char *spcmd2[] = {"bitwarden-desktop", NULL };
+const char *spcmd3[] = {"alacritty", "--class", "sphtop", "-e", "htop", NULL };
 static Sp scratchpads[] = {
 	/* name         cmd  */
 	{"alacritty",   spcmd1},
 	{"bitwarden",   spcmd2},
+	{"htop",	    spcmd3},
 };
 
 /* tagging */
@@ -63,6 +65,7 @@ static const Rule rules[] = {
 	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
 	{ NULL,		  				   "scratchpad",							  NULL,		  SPTAG(0),		1,			 -1 },
 	{ NULL,		  				   "bitwarden",	     						  NULL,		  SPTAG(1),		1,			 -1 },
+	{ NULL,		  				   "sphtop",								  NULL,		  SPTAG(2),		1,			 -1 },
 	{ "webex",	  				   NULL,		     						  NULL,		  1 << 7,		0,			 2 },
 };
 
@@ -127,6 +130,7 @@ static Key keys[] = {
 	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,             XK_g,   					  setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,             XK_h,   					  setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ControlMask, XK_h, 	                  togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,   XK_m,                       spawn,	      SHCMD("sb-mic -t") },
 	{ MODKEY,			  XK_c,                       spawn,	      SHCMD("sb-mic -t") }, // Microphone button on Keychron
 	{ MODKEY,             XK_space,                   setlayout,      {0} },
