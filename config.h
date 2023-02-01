@@ -62,7 +62,7 @@ static const Rule rules[] = {
 	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,           0 },
 	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0 },
 	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2 },
-	{ NULL,                        "crx__hnpfjngllnobngcgfapefoaidbinmjnm",   NULL,       1 << 8,       0,           2 }, // Whats App
+	{ NULL,                        "crx_hnpfjngllnobngcgfapefoaidbinmjnm",    NULL,       1 << 8,       0,           2 }, // Whats App
 	{ NULL,		  				   "scratchpad",							  NULL,		  SPTAG(0),		1,			 -1 },
 	{ NULL,		  				   "bitwarden",	     						  NULL,		  SPTAG(1),		1,			 -1 },
 	{ NULL,		  				   "sphtop",								  NULL,		  SPTAG(2),		1,			 -1 },
