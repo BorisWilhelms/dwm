@@ -55,18 +55,18 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                       instance                                   title       tags mask     isfloating   monitor */
-	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       1,           0 }, // Outlook
-	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1 },
-	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1 },
-	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1 },
-	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,           0 },
-	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0 },
-	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2 },
-	{ NULL,                        "crx_hnpfjngllnobngcgfapefoaidbinmjnm",    NULL,       1 << 8,       0,           2 }, // Whats App
+	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       1,           0  }, // Outlook
+	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1  },
+	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1  },
+	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1  },
+	{ NULL,                        "qalculate-gtk",                           NULL,       0,            1,           0  },
+	{ "Kazam",                     NULL,                                      NULL,       0,            1,           0  },
+	{ "Signal",                    NULL,                                      NULL,       1 << 8,       0,           2  },
+	{ NULL,                        "crx_hnpfjngllnobngcgfapefoaidbinmjnm",    NULL,       1 << 8,       0,           2  }, // Whats App
 	{ NULL,		  				   "scratchpad",							  NULL,		  SPTAG(0),		1,			 -1 },
 	{ NULL,		  				   "bitwarden",	     						  NULL,		  SPTAG(1),		1,			 -1 },
 	{ NULL,		  				   "sphtop",								  NULL,		  SPTAG(2),		1,			 -1 },
-	{ "webex",	  				   NULL,		     						  NULL,		  1 << 7,		0,			 2 },
+	{ "webex",	  				   NULL,		     						  NULL,		  1 << 7,		0,			 2  },
 };
 
 /* layout(s) */
