@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                       instance                                   title       tags mask     isfloating   monitor */
-	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       0,           0 }, // Outlook
+	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       1,           0 }, // Outlook
 	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1 },
 	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1 },
 	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1 },
