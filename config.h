@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                       instance                                   title       tags mask     isfloating   monitor */
-	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       1,           0  }, // Outlook
+	{ NULL,                        "crx_faolnafnngnfdaknnbpnkhgohbobgegn",    NULL,       1 << 8,       0,           0  }, // Outlook
 	{ "Slack",                     NULL,                                      NULL,       1     ,       0,           1  },
 	{ "zoom",                      NULL,                                      NULL,       1 << 1,       0,           1  },
 	{ "Microsoft Teams - Preview", NULL,                                      NULL,       1 << 1,       0,           1  },
@@ -67,6 +67,7 @@ static const Rule rules[] = {
 	{ NULL,		  				   "bitwarden",	     						  NULL,		  SPTAG(1),		1,			 -1 },
 	{ NULL,		  				   "sphtop",								  NULL,		  SPTAG(2),		1,			 -1 },
 	{ "webex",	  				   NULL,		     						  NULL,		  1 << 7,		0,			 2  },
+	{ "mpv",	  				   NULL,		     						  NULL,		  0,			1,			 0  },
 };
 
 /* layout(s) */
@@ -111,31 +112,34 @@ static const char *windowcmd[] = { "rofi", "-show", "window", "-theme", "Dracula
 
 static Key keys[] = {
 	/* modifier           key                         function        argument */
-	{ MODKEY,             XK_p,                       spawn,          {.v = roficmd } },
-	{ MODKEY,             XK_r,                       spawn,          {.v = runcmd } },
-	{ MODKEY|ShiftMask,   XK_Return,                  spawn,          {.v = termcmd } },
-	{ MODKEY|ControlMask, XK_Return,                  togglescratch,  {.ui = 0 } },
-	{ MODKEY,             XK_b,                       togglebar,      {0} },
-	{ MODKEY|ControlMask, XK_b,                       togglescratch,  {.ui = 1 } },
+	{ MODKEY,             XK_Return,                  zoom,           {0} },
+	{ MODKEY|ShiftMask,   XK_Return,                  togglescratch,  {.ui = 0 } },
+	{ MODKEY|ControlMask, XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,             XK_Tab,                     focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,   XK_Tab,                     focusstack,     {.i = -1 } },
-	{ MODKEY,             XK_i,                       incnmaster,     {.i = +1 } },
-	{ MODKEY,             XK_d,                       incnmaster,     {.i = -1 } },
 	{ MODKEY,             XK_minus,                   setmfact,       {.f = -0.05} },
 	{ MODKEY,             XK_equal,                   setmfact,       {.f = +0.05} },
-	{ MODKEY,             XK_Return,                  zoom,           {0} },
+	{ MODKEY,             XK_space,                   setlayout,      {0} },
+	{ MODKEY|ShiftMask,   XK_space,                   togglefloating, {0} },
+	{ MODKEY,             XK_b,                       togglebar,      {0} },
+	{ MODKEY|ShiftMask,	  XK_b,                       togglescratch,  {.ui = 1 } },
+	{ MODKEY,			  XK_c,                       spawn,	      SHCMD("sb-mic -t") }, // Microphone button on Keychron
 	{ MODKEY|ShiftMask,   XK_c,                       killclient,     {0} },
-	{ MODKEY,             XK_t,                       setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,             XK_d,                       incnmaster,     {.i = -1 } },
 	{ MODKEY,             XK_f,                       setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,             XK_g,   					  setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,             XK_h,   					  setlayout,      {.v = &layouts[4]} },
-	{ MODKEY|ControlMask, XK_h, 	                  togglescratch,  {.ui = 2 } },
+	{ MODKEY|ShiftMask,	  XK_h, 	                  togglescratch,  {.ui = 2 } },
+	{ MODKEY,             XK_i,                       incnmaster,     {.i = +1 } },
+	{ MODKEY,             XK_m,                       setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,   XK_m,                       spawn,	      SHCMD("sb-mic -t") },
-	{ MODKEY,			  XK_c,                       spawn,	      SHCMD("sb-mic -t") }, // Microphone button on Keychron
-	{ MODKEY,             XK_space,                   setlayout,      {0} },
+	{ MODKEY,             XK_p,                       spawn,          {.v = roficmd } },
+	{ MODKEY,             XK_r,                       spawn,          {.v = runcmd } },
+	{ MODKEY,             XK_s,                       spawn,          SHCMD("screenshot") }, // Creates a screenshot and copies it to the clipboard
+	{ MODKEY|ShiftMask,   XK_s,                       spawn,          SHCMD("screenshot -select") }, // Creates a screenshot of a region and copies it to the clipboard
+	{ MODKEY,             XK_t,                       setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,             XK_w,                       spawn,          {.v = windowcmd } },
-	{ MODKEY|ShiftMask,   XK_space,                   togglefloating, {0} },
+	{ MODKEY, 			  XK_z,                       spawn,          SHCMD("boomer") },
 	{ MODKEY,             XK_0,                       view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,   XK_0,                       tag,            {.ui = ~0 } },
 	TAGKEYS(              XK_1,                                       0)
@@ -156,11 +160,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_F2,                      tagnthmon,      {.i = 0 } },
 	{ MODKEY|ShiftMask,   XK_F3,                      tagnthmon,      {.i = 1 } },
 	{ MODKEY,             XK_period,                  spawn,          SHCMD("rofi-emoji-picker") }, // Emoji picker
-	{ MODKEY,             XK_s,                       spawn,          SHCMD("screenshot") }, // Creates a screenshot and copies it to the clipboard
-	{ MODKEY|ShiftMask,   XK_s,                       spawn,          SHCMD("screenshot -select") }, // Creates a screenshot of a region and copies it to the clipboard
 	{ MODKEY,             XK_Escape,                  spawn,          SHCMD("lock") },
 	{ MODKEY|ShiftMask,   XK_Escape,                  spawn,          SHCMD("off") },
-	{ MODKEY, 			  XK_z,                       spawn,          SHCMD("boomer") },
 	{ 0,                  XF86XK_AudioPlay,           spawn,          SHCMD("playerctl play-pause") },
 	{ 0,                  XF86XK_AudioRaiseVolume,    spawn,          SHCMD("sb-volume -i") },
 	{ 0,                  XF86XK_AudioLowerVolume,    spawn,          SHCMD("sb-volume -d") },
@@ -186,4 +187,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
